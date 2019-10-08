@@ -1,16 +1,32 @@
 <template>
   <div class="modal-content">
-    <div class="alert">
-      aleart message
+    <div class="alert" v-show="alertvisible" >
+      {{message}}
+      <button @click="onClose">X</button>
     </div>
+
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    message: String,
+    isShow: Boolean
+  },
   data () {
     return {
-      message: null
+      close: false
+    }
+  },
+  computed: {
+    alertvisible () {
+      return this.isShow && !this.close
+    }
+  },
+  methods: {
+    onClose () {
+      this.close = true
     }
   }
 }
@@ -26,6 +42,5 @@ export default {
     position:absolute;
     top:0;
     right:0;
-    opacity: 1;
   }
 </style>

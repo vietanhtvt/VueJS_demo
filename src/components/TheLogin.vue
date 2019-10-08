@@ -1,5 +1,6 @@
 <template>
   <div class="login">
+    <alert-message :message="message" :isShow="showAlert"></alert-message>
   <div class="auth-page">
     <div class="container page">
       <div class="row">
@@ -29,6 +30,7 @@
 <script>
 import { required, email, regex } from 'vee-validate/dist/rules'
 import { ValidationProvider, extend } from 'vee-validate'
+import AlertMessage from '@/components/AlertMessage'
 
 import json from './../store/TEST_MOCK_DATA'
 
@@ -49,13 +51,16 @@ extend('regex', {
 export default {
   el: '#login',
   components: {
-    ValidationProvider
+    ValidationProvider,
+    AlertMessage
   },
   data () {
     return {
       userData: [...json],
       email: null,
-      password: null
+      password: null,
+      message: '',
+      showAlert: false
     }
   },
   methods: {
@@ -63,6 +68,9 @@ export default {
       let isAuthen = [...json].filter(data => data.email === email && data.password === password)
       if (isAuthen.length > 0) {
         this.$router.push({ name: 'tab' })
+      } else {
+        this.message = 'sai cmnr'
+        this.showAlert = true
       }
     }
   }

@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <app-header></app-header>
-    <alert-message></alert-message>
     <router-view/>
     <app-footer></app-footer>
   </div>
@@ -10,14 +9,17 @@
 <script>
 import AppFooter from '@/components/TheFooter'
 import AppHeader from '@/components/TheHeader'
-import AlertMessage from '@/components/AlertMessage'
 
 export default {
   name: 'App',
   components: {
     AppFooter,
-    AppHeader,
-    AlertMessage
+    AppHeader
+  },
+  data () {
+    return {
+      message: ''
+    }
   }
 }
 </script>
