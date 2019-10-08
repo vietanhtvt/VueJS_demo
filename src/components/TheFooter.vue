@@ -1,10 +1,10 @@
 <template>
   <footer>
-    <div class="container">
+    <div class="text-center">
       <span class="attribution">
-        An interactive learning project from
+        Copy right
         <a rel="noopener noreferrer" target="blank" href="https://thinkster.io"
-        >Thinkster</a
+        >Relipa Soft</a
         >. Code &amp; design licensed under MIT.
       </span>
     </div>
@@ -15,6 +15,6 @@
 
 </script>
 
-<style lang="css">
+<style>
 
 </style>

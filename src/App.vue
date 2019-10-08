@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <app-header></app-header>
+    <alert-message></alert-message>
     <router-view/>
     <app-footer></app-footer>
   </div>
@@ -8,11 +9,15 @@
 
 <script>
 import AppFooter from '@/components/TheFooter'
+import AppHeader from '@/components/TheHeader'
+import AlertMessage from '@/components/AlertMessage'
 
 export default {
   name: 'App',
   components: {
-    AppFooter
+    AppFooter,
+    AppHeader,
+    AlertMessage
   }
 }
 </script>
@@ -26,8 +31,4 @@ export default {
   color: #2c3e50;
   margin-top: 20px;
 }
-#app img {
-  text-align: left;
-  width: 60px;
-  }
 </style>

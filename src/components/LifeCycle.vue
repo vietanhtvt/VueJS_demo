@@ -38,7 +38,8 @@ export default {
   },
 
   beforeUpdate () {
-    console.log(this.counter) // Logs the counter value every second, before the DOM updates.
+    // Quá trình này được gọi ngay sau khi dữ liệu trên component bị thay đổi và trước khi component re-render
+    /* ví dụ bên dưới sẽ log ra màn hình liên tục các giá trị của counter sau khi nó bị thay đổi và trước khi DOM được re-render  */
   }
 }
 </script>
